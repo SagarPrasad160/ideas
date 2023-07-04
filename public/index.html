@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c03d196568.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div id="modal-btn"><i class="fa-solid fa-plus"></i></div>
+      <h1>Random Ideas</h1>
+    </header>
+    <div class="ideas-container"></div>
+    <div class="modal">
+      <div class="modal-form">
+        <form>
+          <div>
+            <input type="text" placeholder="username" name="username" />
+          </div>
+          <div>
+            <input type="text" placeholder="text" name="text" />
+          </div>
+          <div>
+            <input type="text" placeholder="tag" name="tag" />
+          </div>
+          <button class="submit-btn" type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

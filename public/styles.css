@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ede8ed;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.ideas-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.idea {
+  width: 250px;
+  margin: 20px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.username {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: gray;
+}
+
+.fa-xmark:hover {
+  cursor: pointer;
+  color: red;
+}
+
+#modal-btn {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+#modal-btn:hover {
+  cursor: pointer;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal-form {
+  background-color: #161454;
+  width: 350px;
+  height: 400px;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+}
+.submit-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.submit-btn:hover {
+  cursor: pointer;
+}
