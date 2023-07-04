@@ -27,7 +27,7 @@ modalForm.addEventListener("submit", async (e) => {
     tag: modalForm.elements.tag.value,
     username: modalForm.elements.username.value,
   };
-  const res = await axios.post("http://localhost:5000/api/ideas", data);
+  const res = await axios.post("/api/ideas", data);
   const idea = res.data.data;
   getIdeas();
   modal.style.display = "none";
@@ -37,13 +37,13 @@ modalForm.addEventListener("submit", async (e) => {
 ideasContainer.addEventListener("click", async (e) => {
   if (e.target.classList.contains("fa-xmark")) {
     const ideaId = e.target.parentElement.parentElement.dataset.id;
-    await axios.delete(`http://localhost:5000/api/ideas/${ideaId}`);
+    await axios.delete(`/api/ideas/${ideaId}`);
     getIdeas();
   }
 });
 
 const getIdeas = async () => {
-  const res = await axios.get("http://localhost:5000/api/ideas");
+  const res = await axios.get("/api/ideas");
   const ideas = res.data.data;
   const renderedIdeas = ideas
     .map(
