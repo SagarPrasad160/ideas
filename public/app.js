@@ -27,9 +27,19 @@ modalForm.addEventListener("submit", async (e) => {
     tag: modalForm.elements.tag.value,
     username: modalForm.elements.username.value,
   };
-  const res = await axios.post("/api/ideas", data);
+
+  if (!data.text || !data.tag || !data.username) {
+    alert("Please fill out all fields");
+    return;
+  }
+
+  const res = await axios.post("http://localhost:5000/api/ideas", data);
   const idea = res.data.data;
   getIdeas();
+
+  modalForm.elements.text.value = "";
+  modalForm.elements.tag.value = "";
+  modalForm.elements.username.value = "";
   modal.style.display = "none";
 });
 
@@ -37,24 +47,39 @@ modalForm.addEventListener("submit", async (e) => {
 ideasContainer.addEventListener("click", async (e) => {
   if (e.target.classList.contains("fa-xmark")) {
     const ideaId = e.target.parentElement.parentElement.dataset.id;
-    await axios.delete(`/api/ideas/${ideaId}`);
+    await axios.delete(`http://localhost:5000/api/ideas/${ideaId}`);
     getIdeas();
   }
 });
 
+const getTagClass = (idea) => {
+  const set = new Set();
+  set.add("technology");
+  set.add("business");
+  set.add("entertainment");
+  set.add("health");
+  set.add("inventions");
+  if (set.has(idea.tag.toLowerCase())) {
+    return `tag-${idea.tag.toLowerCase()}`;
+  }
+};
+
 const getIdeas = async () => {
-  const res = await axios.get("/api/ideas");
+  const res = await axios.get("http://localhost:5000/api/ideas");
   const ideas = res.data.data;
   const renderedIdeas = ideas
     .map(
       (idea) => `
     <div class="idea" data-id=${idea._id}>
     <div>
-    <p>
+    <p class='text'>
     ${idea.text}
    </p>
    <p class="username">
-   -${idea.username}
+   -${idea.username} on ${idea.date.slice(0, 10)}
+   </p>
+   <p class="tag ${getTagClass(idea)}">
+   ${idea.tag}
    </p>
     </div>
     <div class="delete">
