@@ -19,5 +19,5 @@ app.use("/api/ideas", ideasRouter);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log("Listenting at port 5000");
+  console.log(`Listening on PORT ${PORT}`);
 });
