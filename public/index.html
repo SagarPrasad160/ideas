@@ -22,13 +22,20 @@
     <div class="modal">
       <div class="modal-form">
         <form>
-          <input type="text" placeholder="username" name="username" />
+          <div class="input-group">
+            <label for="username">Enter Username</label>
+            <input type="text" id="username" name="username" />
+          </div>
+          <div class="input-group">
+            <label for="text">What's your Idea?</label>
+            <textarea name="text" id="text" cols="60" rows="10"></textarea>
+          </div>
+          <div class="input-group">
+            <label for="tag">Tag</label>
+            <input type="text" name="tag" />
+          </div>
 
-          <input type="text" placeholder="text" name="text" />
-
-          <input type="text" placeholder="tag" name="tag" />
-
-          <button class="submit-btn" type="submit">Add</button>
+          <button class="submit-btn" type="submit">Submit</button>
         </form>
       </div>
     </div>

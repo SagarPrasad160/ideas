@@ -25,7 +25,7 @@ h1 {
 
 .idea {
   margin: 20px;
-  background-color: whitesmoke;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   position: relative;
@@ -45,18 +45,15 @@ h1 {
   position: absolute;
   right: 10px;
   top: 10px;
-}
-.fa-xmark:hover {
   cursor: pointer;
   color: red;
 }
 
 #modal-btn {
   margin: 20px;
-  font-size: 1.5rem;
-}
-#modal-btn:hover {
+  font-size: 30px;
   cursor: pointer;
+  color: #56a82d;
 }
 
 .modal {
@@ -70,39 +67,41 @@ h1 {
 }
 
 .modal-form {
-  background-color: #161454;
-  width: 350px;
-  height: 400px;
+  background-color: steelblue;
+  width: 50%;
+  height: auto;
+  padding: 10px;
   margin: 10% auto;
-  padding: 20px;
   border-radius: 10px;
 }
 
-form {
-  height: 100%;
+form,
+form input,
+form textarea {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+form label {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-form input {
-  width: 100%;
-  padding: 10px;
-}
 .submit-btn {
-  padding: 10px 20px;
   border-radius: 5px;
   width: 100%;
-  background-color: #fcd628;
-  font-size: 1.5rem;
+  background-color: #171e24;
   color: #fff;
-  text-transform: uppercase;
+  font-size: medium;
+  letter-spacing: 1px;
+  padding: 10px 20px;
 }
 .submit-btn:hover {
   cursor: pointer;
-  filter: brightness(110%);
+  background-color: black;
 }
 
 .tag {

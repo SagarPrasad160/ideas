@@ -2,9 +2,12 @@ const ideasContainer = document.querySelector(".ideas-container");
 const modalBtn = document.querySelector("#modal-btn");
 const modal = document.querySelector(".modal");
 const modalForm = document.querySelector(".modal-form form");
+const userNameDisplay = document.querySelector("#username");
 
 // DISPLAY modal
 function showModal() {
+  userNameDisplay.value = localStorage.getItem("username") || "";
+  console.log(userNameDisplay);
   modal.style.display = "block";
 }
 
