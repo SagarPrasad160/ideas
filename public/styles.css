@@ -9,6 +9,7 @@
 body {
   background-color: #ede8ed;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {

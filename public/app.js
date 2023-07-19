@@ -9,6 +9,7 @@ function showModal() {
   userNameDisplay.value = localStorage.getItem("username") || "";
   console.log(userNameDisplay);
   modal.style.display = "block";
+  document.body.style.overflowY = "hidden";
 }
 
 modalBtn.addEventListener("click", showModal);
@@ -17,6 +18,7 @@ modalBtn.addEventListener("click", showModal);
 function closeModal(e) {
   if (e.target === modal) {
     modal.style.display = "none";
+    document.body.style.overflowY = "auto";
   }
 }
 
