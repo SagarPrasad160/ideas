@@ -4,10 +4,12 @@ const modal = document.querySelector(".modal");
 const modalForm = document.querySelector(".modal-form form");
 const userNameDisplay = document.querySelector("#username");
 
+//  load username if exists from local storage
+userNameDisplay.value = localStorage.getItem("username") || "";
+
 // DISPLAY modal
 function showModal() {
   userNameDisplay.value = localStorage.getItem("username") || "";
-  console.log(userNameDisplay);
   modal.style.display = "block";
   document.body.style.overflowY = "hidden";
 }
@@ -87,9 +89,13 @@ const getIdeas = async () => {
    ${idea.tag}
    </p>
     </div>
-    <div class="delete">
-      <i class="fa-sharp fa-solid fa-xmark"></i>
-    </div>
+    ${
+      idea.username === localStorage.getItem("username")
+        ? `<div class="delete">
+          <i class="fa-sharp fa-solid fa-xmark"></i>
+        </div>`
+        : ""
+    }
     </div>
     `
     )
