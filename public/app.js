@@ -5,7 +5,9 @@ const modalForm = document.querySelector(".modal-form form");
 const userNameDisplay = document.querySelector("#username");
 
 //  load username if exists from local storage
-userNameDisplay.value = localStorage.getItem("username") || "";
+document.addEventListener("DOMContentLoaded", () => {
+  userNameDisplay.value = localStorage.getItem("username") || "";
+});
 
 // DISPLAY modal
 function showModal() {
