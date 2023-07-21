@@ -42,6 +42,9 @@ modalForm.addEventListener("submit", async (e) => {
     return;
   }
 
+  // set username in local storage
+  localStorage.setItem("username", data.username);
+
   const res = await axios.post("/api/ideas", data);
   const idea = res.data.data;
   getIdeas();
